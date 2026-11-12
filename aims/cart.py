@@ -8,6 +8,7 @@ class Cart:
         self.items = []
         
     def print_cart(items):
+        print("--- Your Cart ---")
         for item in items:
             print(item)
 
