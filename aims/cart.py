@@ -6,6 +6,10 @@ class Cart:
 
     def __init__(self):
         self.items = []
+        
+    def print_cart(items):
+        for item in items:
+            print(item)
 
     def add_dvd(self, dvd):
         if len(self.items) > MAX_NUMBERS_ORDERED:
