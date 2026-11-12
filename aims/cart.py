@@ -8,6 +8,9 @@ class Cart:
         self.items = []
         
     def print_cart(items):
+        if not items:
+            print("The cart is empty")
+            return
         print("--- Your Cart ---")
         for item in items:
             print(item)
