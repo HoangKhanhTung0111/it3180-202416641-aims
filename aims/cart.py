@@ -7,6 +7,9 @@ class Cart:
     def __init__(self):
         self.items = []
         
+    def search_by_title(items, keyword):
+        return [item for item in items if keyword.lower() in item.lower()]
+
     def print_cart(items):
         if not items:
             print("The cart is empty")
