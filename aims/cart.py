@@ -36,3 +36,8 @@ class Cart:
 
     def total_cost(self):
         return sum(item.cost for item in self.items)
+    
+    def get_discounted_total(self, percent):
+        total = self.total_cost() # Thay bằng hàm tính tổng tiền hiện có trong Cart của bạn
+        return total * percent / 100
+
