@@ -38,6 +38,9 @@ class Cart:
         return sum(item.cost for item in self.items)
     
     def get_discounted_total(self, percent):
-        total = self.total_cost() # Thay bằng hàm tính tổng tiền hiện có trong Cart của bạn
-        return total * percent / 100
+        if percent < 0 or percent > 100:
+            raise ValueError("Discount percent must be between 0 and 100")
+        total = self.total_cost()
+        return total * (100 - percent) / 100
+
 
