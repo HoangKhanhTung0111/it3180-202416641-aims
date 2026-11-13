@@ -36,3 +36,11 @@ class Cart:
 
     def total_cost(self):
         return sum(item.cost for item in self.items)
+    
+    def get_discounted_total(self, percent):
+        if percent < 0 or percent > 100:
+            raise ValueError("Discount percent must be between 0 and 100")
+        total = self.total_cost()
+        return total * (100 - percent) / 100
+
+
