@@ -43,6 +43,13 @@ class TestCart(unittest.TestCase):
         # Kiểm tra sắp xếp theo giá giảm dần (Alpha 20 -> Beta 20 -> Zebra 10)
         cart.sort_by_cost()
         self.assertEqual([d.title for d in cart.items], ["Alpha", "Beta", "Zebra"])
+    
+    def test_search_by_category(self):
+        d1 = DigitalVideoDisc(title="The Lion King", category="Animation", cost=19.95)
+        d2 = DigitalVideoDisc(title="Star Wars", category="Science Fiction", cost=24.95)
+        result = search_by_category([d1, d2], "animation")
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].title, "The Lion King")
 
 
 

@@ -7,6 +7,10 @@ class Cart:
     def __init__(self):
         self.items = []
         
+    def search_by_category(discs, category):
+        keyword = category.strip().lower()
+        return [d for d in discs if keyword in d.category.lower()]
+        
     def search_by_title(items, keyword):
         return [item for item in items if keyword.lower() in item.lower()]
 
