@@ -26,6 +26,24 @@ class TestCart(unittest.TestCase):
         # Kiểm tra nhập phần trăm vô lý (150%) -> phải báo ValueError
         with self.assertRaises(ValueError):
             cart.get_discounted_total(150)
+            
+    def test_sort_cart(self):
+        cart = Cart()
+        d1 = DigitalVideoDisc(title="Zebra", cost=10.0)
+        d2 = DigitalVideoDisc(title="Alpha", cost=20.0)
+        d3 = DigitalVideoDisc(title="Beta", cost=20.0)
+        cart.add_dvd(d1)
+        cart.add_dvd(d2)
+        cart.add_dvd(d3)
+
+        # Kiểm tra sắp xếp theo tên (Alpha -> Beta -> Zebra)
+        cart.sort_by_title()
+        self.assertEqual([d.title for d in cart.items], ["Alpha", "Beta", "Zebra"])
+
+        # Kiểm tra sắp xếp theo giá giảm dần (Alpha 20 -> Beta 20 -> Zebra 10)
+        cart.sort_by_cost()
+        self.assertEqual([d.title for d in cart.items], ["Alpha", "Beta", "Zebra"])
+
 
 
 if __name__ == "__main__":

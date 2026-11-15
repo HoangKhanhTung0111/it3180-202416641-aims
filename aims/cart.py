@@ -42,5 +42,14 @@ class Cart:
             raise ValueError("Discount percent must be between 0 and 100")
         total = self.total_cost()
         return total * (100 - percent) / 100
+    
+    def sort_by_title(self):
+        # Sắp xếp tăng dần theo tên (title), nếu trùng tên thì sắp xếp giảm dần theo giá (cost)
+        self.items.sort(key=lambda disc: (disc.title.lower(), -disc.cost))
+
+    def sort_by_cost(self):
+        # Sắp xếp giảm dần theo giá (cost), nếu trùng giá thì sắp xếp tăng dần theo tên (title)
+        self.items.sort(key=lambda disc: (-disc.cost, disc.title.lower()))
+
 
 
