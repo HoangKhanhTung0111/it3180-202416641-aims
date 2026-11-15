@@ -48,6 +48,10 @@ class TestCart(unittest.TestCase):
         d1 = DigitalVideoDisc(title="The Lion King", category="Animation", cost=19.95)
         d2 = DigitalVideoDisc(title="Star Wars", category="Science Fiction", cost=24.95)
         result = search_by_category([d1, d2], "animation")
+        
+    def test_search_by_title_case_insensitive(self):
+        d1 = DigitalVideoDisc(title="The Lion King", category="Animation", cost=19.95)
+        result = search_by_title([d1], "lion")
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].title, "The Lion King")
 
