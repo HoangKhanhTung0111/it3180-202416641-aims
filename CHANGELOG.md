@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## - 2026-11-15
+### Fixed
+- search_by_title is now case-insensitive (#20)
+
 ## - 2026-11-1
 ### Added
 - Cart.print_cart(), search_by_title(), total_cost_with_discount()

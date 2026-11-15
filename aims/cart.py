@@ -8,7 +8,8 @@ class Cart:
         self.items = []
         
     def search_by_title(items, keyword):
-        return [item for item in items if keyword.lower() in item.lower()]
+        return [dvd for dvd in items if keyword.lower() in dvd.title.lower()]
+
 
     def print_cart(items):
         if not items:
