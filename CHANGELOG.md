@@ -5,6 +5,9 @@
 - Cart.sort_by_title() and Cart.sort_by_cost()
 - search_by_category()
 
+## - 2026-11-15
+### Fixed
+- search_by_title is now case-insensitive (#20)
 
 ## - 2026-11-1
 ### Added
