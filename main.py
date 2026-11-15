@@ -3,7 +3,7 @@ from aims.cart import Cart
 
 
 def main():
-    print("AIMS-mini v1.0.0")
+    print("AIMS-mini v1.1.0")
     
     cart = Cart()
     cart.add_dvd(DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95))

@@ -1,7 +1,10 @@
 ## [Unreleased]
 
+## - 2026-11-15
 ### Added
 - Cart.sort_by_title() and Cart.sort_by_cost()
+- search_by_category()
+
 
 ## - 2026-11-1
 ### Added
