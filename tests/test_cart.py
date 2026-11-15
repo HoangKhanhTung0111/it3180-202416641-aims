@@ -26,6 +26,13 @@ class TestCart(unittest.TestCase):
         # Kiểm tra nhập phần trăm vô lý (150%) -> phải báo ValueError
         with self.assertRaises(ValueError):
             cart.get_discounted_total(150)
+            
+    def test_search_by_title_case_insensitive(self):
+        d1 = DigitalVideoDisc(title="The Lion King", category="Animation", cost=19.95)
+        result = search_by_title([d1], "lion")
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].title, "The Lion King")
+
 
 
 if __name__ == "__main__":
